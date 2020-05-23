@@ -232,8 +232,8 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
   - `ggthemes` package is also worth to check out for working any plots
     (maps,time-series data, and any other plots) that you are working
     on. `theme_gdocs()`, `theme_tufte()`, and `theme_calc()` all work
-    very well. See \[here\]
-    (<https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/>)
+    very well. See
+    [here](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
     to get more cool themes.
 
 <!-- end list -->
