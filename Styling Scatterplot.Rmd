@@ -90,7 +90,7 @@ ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
   scale_color_viridis(discrete=TRUE,option = "D")  ## There are more options to choose
 ```
 
-***
+
 
 #### <span style="color:orange"> **Transparency** </span>
 
@@ -103,7 +103,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
     geom_point(size =4, color="seagreen") 
 ```
 
-***
+
 
 #### <span style="color:orange"> **Shape** </span>
 
@@ -117,7 +117,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 
-***
 
 #### <span style="color:orange"> **Size** </span>
 
@@ -150,7 +149,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 
-***
 
 ### Step 3: Find the comfortable themes
 
@@ -169,7 +167,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
   theme_minimal(base_size = 12)
 ```
 
-***
 
 #### <span style="color:orange"> **Themes from `ggpthemes` package** </span>
 
@@ -185,7 +182,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
   theme_calc()
 ```
 
-***
+
 
 #### <span style="color:orange"> **Create by your own** </span>
 
@@ -218,7 +215,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
   )
 ```
 
-***
+
 
 #### <span style="color:orange"> **Postion and Appearance** </span>
 

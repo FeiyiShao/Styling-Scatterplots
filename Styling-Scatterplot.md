@@ -129,8 +129,6 @@ ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
------
-
 #### <span style="color:orange"> **Transparency** </span>
 
   - We can always distinguish the `Species` by `transparency`.
@@ -145,8 +143,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
-
------
 
 #### <span style="color:orange"> **Shape** </span>
 
@@ -163,8 +159,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
------
 
 #### <span style="color:orange"> **Size** </span>
 
@@ -207,8 +201,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
------
-
 ### Step 3: Find the comfortable themes
 
 The next step that we can do is to figure out what the most fittable
@@ -235,8 +227,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
------
-
 #### <span style="color:orange"> **Themes from `ggpthemes` package** </span>
 
   - `ggthemes` package is also worth to check out for working any plots
@@ -259,8 +249,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
-
------
 
 #### <span style="color:orange"> **Create by your own** </span>
 
@@ -305,8 +293,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
-
------
 
 #### <span style="color:orange"> **Postion and Appearance** </span>
 
