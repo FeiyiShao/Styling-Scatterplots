@@ -1,8 +1,6 @@
 Styling Scatterplots
 ================
 
-# Styling Scatterplots
-
 # Introduction
 
 A scatterplot is a useful and straightforward way to visualize the
@@ -244,8 +242,8 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
                  shape=Species)) + 
   geom_point(size=3) +
   scale_color_viridis(discrete=TRUE,option = "D") +
-  ## Using the theme_calc()
-  theme_calc()
+  ## Using the theme_tufte()
+  theme_tufte()
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
@@ -336,11 +334,7 @@ specific patterns in our dataset.
   - According to the plot, it seems like there exists a linear
     relationship betwee sepal length and sepal width. Thus, let’s add a
     linear trend to our scattplot to help readers see the pattern more
-    directly using `geom_smooth()`. Note that the method argument in
-    `geom_smooth()` allows to apply different smoothing method like glm,
-    loess and more. See the
-    [doc](https://ggplot2.tidyverse.org/reference/geom_smooth.html) for
-    more.
+    directly using `geom_smooth()`.
 
 <!-- end list -->
 
@@ -367,11 +361,43 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
+#### <span style="color:orange"> **Other Trends** </span>
+
+  - There are many trends that your data can be suggested.Note that the
+    `method` argument in `geom_smooth()` allows to apply different
+    smoothing method like glm, loess and more. See the
+    [doc](https://ggplot2.tidyverse.org/reference/geom_smooth.html) for
+    more.
+    
+      - For example, if we want to specify the best trends by the given
+        data, we can leave the `method` argument empty.
+
+<!-- end list -->
+
+``` r
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
+                 col=Species,
+                 shape=Species)) + 
+  geom_point(size=3) +
+  scale_color_viridis(discrete=TRUE,option = "D") +
+  labs(
+    x="Sepal Length",
+    y="Speal Width",
+    title = "Sepal length vs. Sepal width",
+    subtitle = "plot within different Iris Species"
+  )+
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))+
+  theme (plot.title = element_text(color = "black", size = 14, face = "bold"),
+         plot.subtitle = element_text(color = "grey40",size = 10, face = 'italic')) +
+  geom_smooth(se=TRUE)
+```
+
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
 ## Keep in Mind
 
-  - Check
-    [here](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
-    for more data visualization with `ggplot2` package.
   - **REMEMBER** always clean your dataset before you try to make
     scatterplots since in the real world, the dataset is always messier
     than the `iris` dataset.
@@ -380,8 +406,8 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
     points.
   - **Be more careful** if you have **Date** (which is time-series data)
     as your x-variable, **Date** can be very tricky in many ways.
-  - **Google** is always your good friend if you have hard time figuring
-    out your code.
+  - **Google** and `help` function are always your good friends if you
+    have problems on your codes.
 
 ## Also Consider
 
@@ -396,3 +422,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
     package, see
     [here](https://www.r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html)
     for more help.
+  - Check
+    [here](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+    for more data visualization with `ggplot2` package.
