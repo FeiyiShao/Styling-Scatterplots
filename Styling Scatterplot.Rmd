@@ -142,7 +142,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
                  col=Species,
                  shape=Species)) + 
-  geom_point() +
+  geom_point(size = 3) +
   scale_shape_manual(values = c(3, 10, 16))+
   ## Using viridis package here
   scale_color_viridis(discrete=TRUE,option = "D") 
