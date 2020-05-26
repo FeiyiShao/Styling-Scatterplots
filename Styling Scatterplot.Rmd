@@ -52,47 +52,10 @@ ggplot(data = iris, aes(
 
 One of the most powerful and magic abilities of the *ggplot2* package is to map a variable to marker features. 
 
-#### <span style="color:orange"> **Color** </span>
-
-  * For example, if we want to the marker `color` depends on the variable `Species` in the `iris` dataset, we can do the following:
-
-```{r}
-## First, we need to make sure that 'Species' is a factor variable 
-## class(iris$Species)
-
-## Since 'Species' is already a factor variable, we do not need to do conversion 
-## However, in case 'Species' is not a factor variable, we can solve this question using as.factor() function, like below
-## iris$Species <- as.factor(iris$Species)
-
-## Then, we are ready to plot 
-ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, 
-                        ## distinguish the species by color
-                        color=Species))+
-  geom_point()
-```
-
-  * ##### *Note*
-
-    * If you do not like the default colors in the ggplot2, there are a couple of ways to change that.The **RColorBrewer**package will definitely help. If you want to know more about **RColorBrewer** package,see [here](https://ggplot2.tidyverse.org/reference/scale_brewer.html). Additionally,the **viridis** package is also very helpful to change the default colors. For more information of the **viridis** package, check [here](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html).
-    * If you do not like all the options that the  **RColorBrewer** and **viridis** packages provide, see [here](http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually) to work with color in the **ggplot2** package.
-
-```{r}
-ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
-  geom_point()+
-  ## Where RColorBrewer package comes in
-  scale_colour_brewer(palette = "Set1") ## There are more options available for palette
-
-ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
-  geom_point()+
-  ## Where viridis package comes in
-  scale_color_viridis(discrete=TRUE,option = "D")  ## There are more options to choose
-```
-
-
 
 #### <span style="color:orange"> **Transparency** </span>
 
-  * We can always distinguish the `Species` by `transparency`. 
+  * We can distinguish the `Species` by `transparency`. 
 
 ```{r,warning=FALSE}
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
@@ -131,6 +94,43 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ```
 
 
+#### <span style="color:orange"> **Color** </span>
+
+  * Last but not least, if we want to the marker `color` depends on the variable `Species` in the `iris` dataset, we can do the following:
+
+```{r}
+## First, we need to make sure that 'Species' is a factor variable 
+## class(iris$Species)
+
+## Since 'Species' is already a factor variable, we do not need to do conversion 
+## However, in case 'Species' is not a factor variable, we can solve this question using as.factor() function, like below
+## iris$Species <- as.factor(iris$Species)
+
+## Then, we are ready to plot 
+ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, 
+                        ## distinguish the species by color
+                        color=Species))+
+  geom_point()
+```
+
+
+ * ##### *Note*
+
+    * If you do not like the default colors in the ggplot2, there are a couple of ways to change that.The **RColorBrewer**package will definitely help. If you want to know more about **RColorBrewer** package,see [here](https://ggplot2.tidyverse.org/reference/scale_brewer.html). Additionally,the **viridis** package is also very helpful to change the default colors. For more information of the **viridis** package, check [here](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html).
+    * If you do not like all the options that the  **RColorBrewer** and **viridis** packages provide, see [here](http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually) to work with color in the **ggplot2** package.
+
+```{r}
+ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
+  geom_point()+
+  ## Where RColorBrewer package comes in
+  scale_colour_brewer(palette = "Set1") ## There are more options available for palette
+
+ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
+  geom_point()+
+  ## Where viridis package comes in
+  scale_color_viridis(discrete=TRUE,option = "D")  ## There are more options to choose
+```
+
 
 #### <span style="color:orange"> **Put all the options together** </span>
 
@@ -143,7 +143,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
                  col=Species,
                  shape=Species)) + 
   geom_point(size = 3) +
-  scale_shape_manual(values = c(3, 10, 16))+
   ## Using viridis package here
   scale_color_viridis(discrete=TRUE,option = "D") 
 ```

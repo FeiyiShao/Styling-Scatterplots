@@ -67,9 +67,61 @@ ggplot(data = iris, aes(
 One of the most powerful and magic abilities of the *ggplot2* package is
 to map a variable to marker features.
 
+#### <span style="color:orange"> **Transparency** </span>
+
+  - We can distinguish the `Species` by `transparency`.
+
+<!-- end list -->
+
+``` r
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
+                 ## Where transparency comes in
+                 alpha=Species)) + 
+    geom_point(size =4, color="seagreen") 
+```
+
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+#### <span style="color:orange"> **Shape** </span>
+
+  - `Shape` is also a common way to help us to see relationship between
+    two variables within different groups.
+  - Additionally, you can always change the shape of the points. Check
+    [here](https://www.datanovia.com/en/blog/ggplot-point-shapes-best-tips/)
+    for more ideas.
+
+<!-- end list -->
+
+``` r
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
+                 ## Where shape comes in
+                 shape=Species)) + 
+    geom_point(size = 4,color="orange") 
+```
+
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+#### <span style="color:orange"> **Size** </span>
+
+  - Furthermore, `size` is a great option that we can take a look at as
+    well.
+  - However, note that `size` will work better with continuous
+    variables.
+
+<!-- end list -->
+
+``` r
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
+                 ## Where size comes in 
+                 size=Species)) + 
+    geom_point(shape = 18, color = "#FC4E07") 
+```
+
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
 #### <span style="color:orange"> **Color** </span>
 
-  - For example, if we want to the marker `color` depends on the
+  - Last but not least, if we want to the marker `color` depends on the
     variable `Species` in the `iris` dataset, we can do the following:
 
 <!-- end list -->
@@ -89,7 +141,7 @@ ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width,
   geom_point()
 ```
 
-![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
   - ##### *Note*
     
@@ -116,7 +168,7 @@ ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
   scale_colour_brewer(palette = "Set1") ## There are more options available for palette
 ```
 
-![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
@@ -125,59 +177,7 @@ ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
   scale_color_viridis(discrete=TRUE,option = "D")  ## There are more options to choose
 ```
 
-![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
-
-#### <span style="color:orange"> **Transparency** </span>
-
-  - We can always distinguish the `Species` by `transparency`.
-
-<!-- end list -->
-
-``` r
-ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
-                 ## Where transparency comes in
-                 alpha=Species)) + 
-    geom_point(size =4, color="seagreen") 
-```
-
-![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
-
-#### <span style="color:orange"> **Shape** </span>
-
-  - `Shape` is also a common way to help us to see relationship between
-    two variables within different groups.
-  - Additionally, you can always change the shape of the points. Check
-    [here](https://www.datanovia.com/en/blog/ggplot-point-shapes-best-tips/)
-    for more ideas.
-
-<!-- end list -->
-
-``` r
-ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
-                 ## Where shape comes in
-                 shape=Species)) + 
-    geom_point(size = 4,color="orange") 
-```
-
-![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
-#### <span style="color:orange"> **Size** </span>
-
-  - Furthermore, `size` is a great option that we can take a look at as
-    well.
-  - However, note that `size` will work better with continuous
-    variables.
-
-<!-- end list -->
-
-``` r
-ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
-                 ## Where size comes in 
-                 size=Species)) + 
-    geom_point(shape = 18, color = "#FC4E07") 
-```
-
-![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->
 
 #### <span style="color:orange"> **Put all the options together** </span>
 
@@ -195,7 +195,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
                  col=Species,
                  shape=Species)) + 
   geom_point(size = 3) +
-  scale_shape_manual(values = c(3, 10, 16))+
   ## Using viridis package here
   scale_color_viridis(discrete=TRUE,option = "D") 
 ```
