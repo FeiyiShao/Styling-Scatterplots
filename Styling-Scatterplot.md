@@ -146,6 +146,9 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 
   - `Shape` is also a common way to help us to see relationship between
     two variables within different groups.
+  - Additionally, you can always change the shape of the points. Check
+    [here](https://www.datanovia.com/en/blog/ggplot-point-shapes-best-tips/)
+    for more ideas.
 
 <!-- end list -->
 
@@ -171,11 +174,10 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
                  ## Where size comes in 
                  size=Species)) + 
-    geom_point(color="firebrick1") 
+    geom_point(shape = 18, color = "#FC4E07") 
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-\*\*\*
 
 #### <span style="color:orange"> **Put all the options together** </span>
 
@@ -183,7 +185,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
     `size` together to get prettier plot.
   - Personally, mixing more than two can make your graph a little bit
     messy, choosing to mix two seems to be a nice choice. However, do
-    whatever you perfer\!\!\!
+    whatever you perfer to be your style\!\!\!
 
 <!-- end list -->
 
@@ -192,7 +194,8 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, 
                  col=Species,
                  shape=Species)) + 
-  geom_point(size=3) +
+  geom_point() +
+  scale_shape_manual(values = c(3, 10, 16))+
   ## Using viridis package here
   scale_color_viridis(discrete=TRUE,option = "D") 
 ```
@@ -266,8 +269,7 @@ to your audiences.
   - Both `labs()` and `ggtitle()` are great tools to deal with labelling
     information. In the following code, we provide the example how to
     use `labs()` to label the all the things that we need. Take a look
-    \[here\]
-    (<https://www.r-graph-gallery.com/289-control-ggplot2-title.html>)
+    [here](https://www.r-graph-gallery.com/289-control-ggplot2-title.html)
     if you want to learn how to use `ggtitle()`.
 
 <!-- end list -->
@@ -356,7 +358,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
   theme (plot.title = element_text(color = "black", size = 14, face = "bold"),
          plot.subtitle = element_text(color = "grey40",size = 10, face = 'italic')) +
   ## Where linear trend + confidence interval come in
-  geom_smooth(method = 'lm', se=TRUE)
+  geom_smooth(method = 'lm',se=FALSE)
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
@@ -391,7 +393,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width,
         plot.subtitle = element_text(hjust = 0.5))+
   theme (plot.title = element_text(color = "black", size = 14, face = "bold"),
          plot.subtitle = element_text(color = "grey40",size = 10, face = 'italic')) +
-  geom_smooth(se=TRUE)
+  geom_smooth(se=FALSE)
 ```
 
 ![](Styling-Scatterplot_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
